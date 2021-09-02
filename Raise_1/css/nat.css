@@ -1,0 +1,110 @@
+﻿
+#test-div {
+    background-color: black;
+    margin-top: 20vh;
+    width: 50%;
+    height: calc(1.525rem + 28vw);
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#innerIframe {
+    position: absolute;
+    top: calc(1.525rem - 15vw);
+    width: 100%;
+    height: calc(1.525rem + 50vw);
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
+    /* For tablets: */
+
+    #test-div {
+        background-color: black;
+        margin-top: 20vh;
+        width: 50%;
+        height: calc(1.525rem + 26vw);
+        position: relative;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #innerIframe {
+        position: absolute;
+        top: calc(1.525rem - 18vw);
+        width: 100%;
+        height: calc(1.525rem + 45vw);
+    }
+}
+
+@media screen and (min-width: 1197px) and (max-width: 1199px) {
+    /* For tablets: */
+
+    #test-div {
+        background-color: black;
+        margin-top: 20vh;
+        width: 50%;
+        height: calc(1.525rem + 26vw);
+        position: relative;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #innerIframe {
+        position: absolute;
+        top: calc(1.525rem - 19vw);
+        width: 100%;
+        height: calc(1.525rem + 43vw);
+    }
+}
+
+@media screen and (min-width: 1120px) and (max-width: 1196px) {
+    /* For tablets: */
+
+    #test-div {
+        background-color: black;
+        margin-top: 20vh;
+        width: 50%;
+        height: calc(1.525rem + 26vw);
+        position: relative;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #innerIframe {
+        position: absolute;
+        top: calc(1.525rem - 12vw);
+        width: 100%;
+        height: calc(1.525rem + 38vw);
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1119px) {
+    /* For tablets: */
+
+    #test-div {
+        background-color: black;
+        margin-top: 20vh;
+        width: 50%;
+        height: calc(1.525rem + 26vw);
+        position: relative;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #innerIframe {
+        position: absolute;
+        top: calc(1.525rem - 12vw);
+        width: 100%;
+        height: calc(1.525rem + 46vw);
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 719px) {
+    
+}

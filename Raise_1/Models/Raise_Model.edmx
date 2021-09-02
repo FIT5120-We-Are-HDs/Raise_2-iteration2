@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Raise_Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Summary">
+          <Key>
+            <PropertyRef Name="summary_id" />
+          </Key>
+          <Property Name="summary_id" Type="int" Nullable="false" />
+          <Property Name="summary_value" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="summary_year" Type="int" Nullable="false" />
+          <Property Name="topic_id" Type="int" Nullable="false" />
+          <Property Name="summary_imp" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Topic">
+          <Key>
+            <PropertyRef Name="topic_id" />
+          </Key>
+          <Property Name="topic_id" Type="int" Nullable="false" />
+          <Property Name="topic_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Summary__topic_i__38996AB5">
+          <End Role="Topic" Type="Self.Topic" Multiplicity="1" />
+          <End Role="Summary" Type="Self.Summary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topic">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="Summary">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Raise_ModelsStoreContainer">
+          <EntitySet Name="Summary" EntityType="Self.Summary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Topic" EntityType="Self.Topic" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Summary__topic_i__38996AB5" Association="Self.FK__Summary__topic_i__38996AB5">
+            <End Role="Topic" EntitySet="Topic" />
+            <End Role="Summary" EntitySet="Summary" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Raise_Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Summary">
+          <Key>
+            <PropertyRef Name="summary_id" />
+          </Key>
+          <Property Name="summary_id" Type="Int32" Nullable="false" />
+          <Property Name="summary_value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="summary_year" Type="Int32" Nullable="false" />
+          <Property Name="topic_id" Type="Int32" Nullable="false" />
+          <Property Name="summary_imp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Topic" Relationship="Self.FK__Summary__topic_i__38996AB5" FromRole="Summary" ToRole="Topic" />
+        </EntityType>
+        <EntityType Name="Topic">
+          <Key>
+            <PropertyRef Name="topic_id" />
+          </Key>
+          <Property Name="topic_id" Type="Int32" Nullable="false" />
+          <Property Name="topic_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Summaries" Relationship="Self.FK__Summary__topic_i__38996AB5" FromRole="Topic" ToRole="Summary" />
+        </EntityType>
+        <Association Name="FK__Summary__topic_i__38996AB5">
+          <End Role="Topic" Type="Self.Topic" Multiplicity="1" />
+          <End Role="Summary" Type="Self.Summary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topic">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="Summary">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Raise_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Summaries" EntityType="Self.Summary" />
+          <EntitySet Name="Topics" EntityType="Self.Topic" />
+          <AssociationSet Name="FK__Summary__topic_i__38996AB5" Association="Self.FK__Summary__topic_i__38996AB5">
+            <End Role="Topic" EntitySet="Topics" />
+            <End Role="Summary" EntitySet="Summaries" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Raise_ModelsStoreContainer" CdmEntityContainer="Raise_Entities">
+          <EntitySetMapping Name="Summaries">
+            <EntityTypeMapping TypeName="Raise_Models.Summary">
+              <MappingFragment StoreEntitySet="Summary">
+                <ScalarProperty Name="summary_id" ColumnName="summary_id" />
+                <ScalarProperty Name="summary_value" ColumnName="summary_value" />
+                <ScalarProperty Name="summary_year" ColumnName="summary_year" />
+                <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+                <ScalarProperty Name="summary_imp" ColumnName="summary_imp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Topics">
+            <EntityTypeMapping TypeName="Raise_Models.Topic">
+              <MappingFragment StoreEntitySet="Topic">
+                <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+                <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

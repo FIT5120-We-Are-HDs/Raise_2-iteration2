@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("/TemplateData/style.css");
+}
+
+    <button type="button" class="btn-sm btn-outline-primary" style="margin-top:8%;">SEARCH</button>
+
+    <div id="unity-container" class="unity-desktop" style="margin-top:20%;">
+        <canvas id="unity-canvas" width=960 height=600></canvas>
+        <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <div id="unity-mobile-warning">
+            WebGL builds are not supported on mobile devices.
+        </div>
+        <div id="unity-footer" style="display: none;">
+            <div id="unity-webgl-logo"></div>
+            <div id="unity-fullscreen-button"></div>
+            <div id="unity-build-title">Life of Natalie</div>
+        </div>
+    </div>
+
+@Scripts.Render("~/Scripts/nat.js")

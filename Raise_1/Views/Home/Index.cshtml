@@ -1,0 +1,140 @@
+﻿@{ 
+    var data = ViewBag.Message;
+}
+<body id="page-top">
+    <!-- Masthead-->
+    <header class="masthead" style="background-image:url(../assets/img/header-bg.jpg); text-align: center;">
+        <div class="container">
+            <div class="masthead-subheading">Everyone deserves to be treated equally, </div>
+            <div class="masthead-heading text-uppercase">TOGETHER, WE RISE</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#facts">LEARN THE STATE OF GENDER EQUALITY</a>
+        </div>
+    </header>
+    <!-- Stat Table-->
+    <section class="page-link bg-dark" id="facts">
+        <div class="container">
+            <h3 class="my-3 text-light">Women's...</h3>
+            <div class="row">
+                @foreach (var item in @data)
+                {
+                    <div class="col-md-3">
+                        <h5 class="my-3 text-light">@item.SumTitle</h5>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h3 class="text-light" style="color: #ff0ba9 !important;">@item.SumValue</h3>
+                            </div>
+                            <div class="col-md-7">
+                                <h3 class="text-light">@item.SumWord</h3>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4">
+                    <h3 class="my-3 text-light text-end">...than Men's</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Facts-->
+    <!--
+   
+    <section class="page-section bg-light" id="facts">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">The Things We Want You Know </h2>
+                <h3 class="section-subheading text-muted">Gender inequality is never far away from us</h3>
+            </div>
+            <div class="row text-center" style="margin-bottom: 4rem;">
+                <div class="col-md-7">
+                    <h4 class="my-3"> Do you really know what is gender equality?</h4>
+                    <p class="text-muted" style="margin-bottom: 6rem;">Learn gender equality from our perspective</p>
+                    <a class="btn btn-secondary btn-xs text-uppercase" herf="#facts">Learn More</a>
+                </div>
+                <div class="col-md-5">
+                    <img src="~/assets/img/facts/facts1-homepage.jpg" width="450" height="300">
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-5">
+                    <img src="~/assets/img/facts/facts2-homepage.jpg" width="450" height="300">
+                </div>
+                <div class="col-md-7">
+                    <h4 class="my-3">
+                        Do you really know how is the gender equality situation in your area?
+                    </h4>
+                    <p class="text-muted" style="margin-bottom: 6rem;">Facts about gender equality in Victoria</p>
+                    <a class="btn btn-secondary btn-xs text-uppercase" herf="#facts">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+        -->
+    <!-- Game-->
+    <section class="page-section " id="game">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Life of Natalie </h2>
+                <h3 class="section-subheading text-muted">Experience the gender inequality by living the Life of Natalie.</h3>
+                <div class="row text-center" style="margin-bottom: 4rem;">
+                    <div class="col-md-7">
+                        <p class="text-black" style="margin-top: 2rem;margin-bottom: 6rem;">
+                            A role simulation game in which you will play the role of Natalie, a girl from Victoria, to experience
+                            various gender equality issues across different stages of her life. Beware of your choice of response, the
+                            smallest decision may change her life forever.
+                        </p>
+                        <a class="btn btn-secondary btn-xs text-uppercase" href="~/Natalie">Play Now</a>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="~/assets/img/game/game-homepage.jpg" width="450" height="300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Take actions-->
+    <section class="page-section bg-light" id="takeAction">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">The Actions You Can Take </h2>
+                <h3 class="section-subheading text-muted">There is always something you can do no matter which role you are</h3>
+                <p>Although we still have a long way to go before we achieve gender equality, but there are actions that can be taken by everyone to stop gender inequality.</p>
+                <div class="row text-center">
+                    <a class="col-md-6" href="~/ForExperiencer">
+                        <img src="~/assets/img/forExperiencer/forExperiencer-homepage.jpg" width="400" height="260">
+                        <h5 class="my-3">
+                            For Experiencer
+                        </h5>
+                    </a>
+                    <!--
+                    <a class="col-md-6" href="#page-top">
+                        <img src="~/assets/img/forStaff/forStaff-homepage.jpg" width="400" height="260">
+                        <h5 class="my-3">
+                            For Concerned Staff
+                        </h5>
+                    </a>
+                        -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- External help-->
+    <!--
+                        <section class="page-section" id="externalHelp">
+                            <div class="container">
+                                <div class="text-center">
+                                    <h2 class="section-heading text-uppercase">External Help </h2>
+                                    <h3 class="section-subheading text-muted">Need subheading or description!!!!(need suggestion)</h3>
+                                </div>
+                            </div>
+                        </section>
+        -->
+</body>
+
+
